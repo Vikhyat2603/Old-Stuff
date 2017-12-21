@@ -14,9 +14,9 @@ void loop()
    {
       data = Serial.readString();       
       Serial.println(data);
-      r=0;g=0;b=0;        
+      r=0;g=0;b=0;        //the data string receives input in the form 'r.g.b' e.g '255.10.52'. The for loops break this down to seprate r,g,b values
       for(i=0;data[i]!='.';i++)
-      { r=(r*10)+(data[i]-'0');  }
+      { r=(r*10)+(data[i]-'0');  }//the "-'0'" part converts the character to a number and the rest of the equation appends that digit to the variable
       i++;
       for(;data[i]!='.';i++)
       { g=(g*10)+(data[i]-'0');  }
